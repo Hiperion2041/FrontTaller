@@ -12,7 +12,7 @@ export class RestService {
   login(params:HttpParams): Observable<any>{
     console.log(params.toString(),"hhh")
     return this.http.post("http://localhost:8080/api/v1/login",params.toString(),{
-      headers:{'Content-Type':'application/x-www-form-unrencoded'}
+      headers:{'Content-Type':'application/x-www-form-urlencoded'}
     });
   }
 }
