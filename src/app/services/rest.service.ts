@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -15,4 +15,14 @@ export class RestService {
       headers:{'Content-Type':'application/x-www-form-urlencoded'}
     });
   }
+
+
+  register(params: HttpParams): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this.http.post("http://localhost:8080/api/v1/usuario/save", params, { headers });
+  }
+  
+  // register(datos: any): Observable<any> {
+  //   return this.http.post("http://localhost:8080/api/v1/usuario/save", datos);
+  // }
 }

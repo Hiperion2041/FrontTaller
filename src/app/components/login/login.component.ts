@@ -3,9 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-import * as $ from 'jquery';
 import { HttpParams } from '@angular/common/http';
-import { data } from 'jquery';
+import * as $ from 'jquery';
 import { RestService } from 'src/app/services/rest.service';
 
 @Component({
@@ -19,6 +18,12 @@ export class LoginComponent implements OnInit {
     reset: any;
     usuario: any;
     contrasenia: any;
+    newuser:any;
+    newpass:any;
+    newmail:any;
+    newcontrasenia:any;
+    apellido:any;
+    newpass2:any;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -29,26 +34,51 @@ export class LoginComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        // this.form = this.formBuilder.group({
-        //     usuario: ['', Validators.required],
-        //     contrasenia: ['', Validators.required]
-        // });
+        this.form = this.formBuilder.group({
+            // username: ['', Validators.required],
+            // password: ['', Validators.required]
+        });
 
         this.addFocusClass();
         this.keyUpObserve();
         this.clickLink();
     }
-    addFocusClass() {
-        throw new Error('Method not implemented.');
+    addFocusClass(): void {
+        $(".form-control").on("focus", function () {
+            $(this).prev().addClass("on-focus");
+        }).on("focusout", function () {
+            $(".form-label").removeClass("on-focus");
+        });
     }
-    keyUpObserve() {
-        throw new Error('Method not implemented.');
+
+    keyUpObserve(): void {
+        $(".form-control").on("keyup", function () {
+            // Convertimos el valor a string antes de verificar su longitud
+            if (String($(this).val()).length > 0) {
+                $(this).prev().addClass("filled");
+            } else {
+                $(this).prev().removeClass("filled");
+            }
+        });
     }
-    clickLink() {
-        throw new Error('Method not implemented.');
+
+    clickLink(): void {
+        $(".link").on("click", function () {
+            var open = $(this).data("open");
+            var close = $(this).data("close");
+
+            $("#" + close).animate({
+                'opacity': 0,
+                'top': +100
+            }, 500 , function () {
+                $(this).removeClass("open").addClass("close").removeAttr("style");
+                $("#" + open).removeClass("close").addClass("open");
+            });
+        });
     }
 
     ingresar() {
+        console.log(this.usuario)
         const user ={
             username: this.usuario,
             password: this.contrasenia
@@ -85,5 +115,38 @@ export class LoginComponent implements OnInit {
         });
       }
 
+      registro() {
+        if (this.newpass===this.newpass2) {
+          const registrado = {
+            username: this.newuser,
+            apellido: this.apellido,
+            password: this.newpass,
+            mail: this.newmail,
+            contrasenia: this.newcontrasenia
+          };
+          
+          const params2 = new HttpParams()
+            .set("Nombre", registrado.username)
+            .set("Apellido", registrado.apellido)
+            .set("Contrasenia", registrado.password)
+            .set("Mail", registrado.mail)
+
+          
+          
+            this.rest.register(params2).subscribe(
+                (response: any) => {
+                  console.log('Usuario registrado:', response);
+                  this.mostrarSnackbar('Usuario registrado correctamente');
+                  this.router.navigate(['/login']);
+                },
+                error => {
+                  console.error('Error al registrar usuario:', error);
+                  this.mostrarSnackbar('Error al registrar usuario');
+                }
+              );
+            } else {
+              this.mostrarSnackbar("Las contraseñas no coinciden");
+            }
+          }
     
 }
