@@ -30,4 +30,15 @@ export class RestService {
   register(usuarioDTO: UsuarioDTO): Observable<any> {
     return this.http.post("http://localhost:8080/api/v1/usuario/save", usuarioDTO);
   }
-}
+
+
+
+
+  // para usar get 
+  // return this.http.post("http://localhost:8080/api/v1/usuario", usuarioDTO);
+  // headers:{'Content-Type':'application/x-www-form-urlencoded',"Authorization":"Bearer" + localStorage.getItem.(token)}
+  getComp(){
+    return this.http.get("http://localhost:8080/api/v1/competencias",{
+      headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
+    } 
+  }
