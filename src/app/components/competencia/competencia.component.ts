@@ -16,7 +16,11 @@ export class CompetenciaComponent {
   ngOnInit(){
     this.token=localStorage.getItem('token')
     this.rest.getComp().subscribe((data: any) => {
-      console.log(data)
+      data.forEach((item: any) => {
+        console.log(item);
+        console.log(item.nombre);
+        console.log(item.usuario.nombre);
+    });
       
   }
   )
