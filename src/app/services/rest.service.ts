@@ -17,6 +17,14 @@ export class RestService {
     });
   }
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
 
   // register(params: HttpParams): Observable<any> {
   //   const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');

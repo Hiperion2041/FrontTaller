@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
 import { HttpParams } from '@angular/common/http';
 import * as $ from 'jquery';
 import { RestService } from 'src/app/services/rest.service';
@@ -29,7 +28,6 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private _snackBar: MatSnackBar,
         private router: Router,
-        private _login: LoginService,
         private rest: RestService
     ) {}
 
@@ -103,6 +101,7 @@ export class LoginComponent implements OnInit {
             console.log(data)
                 localStorage.setItem('token', data.access_token);
             console.log('Ingreso correcto');
+            console.log(localStorage.getItem('token'))
             this.router.navigate(['competencia']);
           }, (error : any) => {
             this.mostrarSnackbar('Usuario o contraseña incorrectos');
