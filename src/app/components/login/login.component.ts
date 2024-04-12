@@ -40,6 +40,9 @@ export class LoginComponent implements OnInit {
         this.addFocusClass();
         this.keyUpObserve();
         this.clickLink();
+        if(this.rest.isLoggedIn()){
+          this.router.navigate(['/competencia'])
+        }
     }
     addFocusClass(): void {
         $(".form-control").on("focus", function () {
@@ -101,8 +104,7 @@ export class LoginComponent implements OnInit {
             console.log(data)
                 localStorage.setItem('token', data.access_token);
             console.log('Ingreso correcto');
-            console.log(localStorage.getItem('token'))
-            this.router.navigate(['competencia']);
+            this.router.navigate(['/competencia']);
           }, (error : any) => {
             this.mostrarSnackbar('Usuario o contraseña incorrectos');
           });
@@ -147,5 +149,10 @@ export class LoginComponent implements OnInit {
             this.mostrarSnackbar("Las contraseñas no coinciden");
           }
         }
-    
+
+        desloguear(){
+          localStorage.removeItem('token');
+          console.log("deslogueado")
+          console.log(localStorage.getItem('token'))
+        }
 }

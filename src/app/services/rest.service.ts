@@ -2,13 +2,16 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UsuarioDTO } from '../components/DtosInterface/usuarioDTO';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router
+  ) { }
 
   login(params:HttpParams): Observable<any>{
     console.log(params.toString(),"hhh")
@@ -21,8 +24,10 @@ export class RestService {
     return !!localStorage.getItem('token');
   }
 
+
   logout(): void {
     localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
 
@@ -48,5 +53,17 @@ export class RestService {
   getComp(){
     return this.http.get("http://localhost:8080/api/v1/competencias",{
       headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
-    } 
+    }
+    
+    getPart(){
+      return this.http.get("http://localhost:8080/api/v1/partidos",{
+        headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
+      } 
+
+      getFixture(): Observable<any> {
+        return this.http.get<any>('http://localhost:8080/api/v1/fixture', {
+          headers: new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')})
+        });
+      }
+
   }

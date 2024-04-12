@@ -7,7 +7,8 @@ import { RestService } from 'src/app/services/rest.service';
   styleUrls: ['./competencia.component.css']
 })
 export class CompetenciaComponent {
-  token:any
+  token:any;
+  fixture: any;
 
   constructor(
     private rest:RestService
@@ -20,9 +21,25 @@ export class CompetenciaComponent {
         console.log(item);
         console.log(item.nombre);
         console.log(item.usuario.nombre);
+        console.log(item.fixture)
     });
-      
   }
   )
+
+  this.rest.getPart().subscribe((data:any)=>{
+    console.log(data)
+  })
   }
+
+  desloguear(){
+    this.rest.logout();
+    console.log("deslogueado");
+  }
+
+  fixturee(){
+    this.rest.getPart().subscribe((data:any)=>{
+      console.log(data)
+    })
+    }
+
 }
