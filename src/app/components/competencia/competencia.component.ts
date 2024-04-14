@@ -21,7 +21,7 @@ export class CompetenciaComponent {
         console.log(item);
         console.log(item.nombre);
         console.log(item.usuario.nombre);
-        console.log(item.fixture)
+        console.log(localStorage.getItem('token'))
     });
   }
   )
