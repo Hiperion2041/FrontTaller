@@ -4,13 +4,15 @@ import { CompetenciaComponent } from './components/competencia/competencia.compo
 import { LoginComponent } from './components/login/login.component';
 import { AltaCompetenciaComponent } from './components/competencia/alta-competencia/alta-competencia.component';
 import { AuthGuard } from './components/auth.guard';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:"competencia", component:CompetenciaComponent, canActivate: [AuthGuard]},
   {path:"alta-competencia",component:AltaCompetenciaComponent, canActivate: [AuthGuard]},
   {path:"", redirectTo:"login", pathMatch:"full"},
-  {path:"**", redirectTo:"login",pathMatch:"full"}
+  {path:"**", redirectTo:"login",pathMatch:"full"},
+  {path:"home", component:HomeComponent}
 ];
 
 @NgModule({
