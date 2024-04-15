@@ -66,4 +66,9 @@ export class RestService {
         });
       }
 
+      getUser(){
+        return this.http.get("http://localhost:8080/api/v1/usuarios",{
+        headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
+      }
+
   }

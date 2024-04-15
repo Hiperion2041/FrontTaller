@@ -103,6 +103,7 @@ export class LoginComponent implements OnInit {
         this.rest.login(params).subscribe((data: any) => {
             console.log(data)
                 localStorage.setItem('token', data.access_token);
+                localStorage.setItem('mail',this.usuario);
             console.log('Ingreso correcto');
             this.router.navigate(['/competencia']);
           }, (error : any) => {

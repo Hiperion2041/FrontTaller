@@ -20,7 +20,7 @@ export class CompetenciaComponent {
       data.forEach((item: any) => {
         console.log(item);
         console.log(item.nombre);
-        console.log(item.usuario.nombre);
+        console.log(item.usuario.id);
         console.log(localStorage.getItem('token'))
     });
   }
@@ -29,6 +29,19 @@ export class CompetenciaComponent {
   this.rest.getPart().subscribe((data:any)=>{
     console.log(data)
   })
+  console.log('=================');
+  this.iduser()
+  }
+
+  iduser(){
+    this.rest.getUser().subscribe((data:any)=>{
+      console.log(localStorage.getItem('mail'))
+      data.forEach((item: any) => {
+        if(localStorage.getItem('mail')==item.mail){
+          console.log(item.id)
+        }
+    });
+    })
   }
 
   desloguear(){
