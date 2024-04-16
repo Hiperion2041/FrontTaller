@@ -5,10 +5,6 @@
     font-size: 20px;
   }
   
-  .body{
-    background-color: #fff59d;
-  }
-  
   /* header */
   .header {
       background-color: #1b3039;
@@ -67,4 +63,30 @@
     font-size: 700;
     color: #ffbc0e ;
     text-transform: uppercase;
+  }
+/* body */
+  .body{
+    display: flex;
+    justify-content: center;
+  }
+
+  .titulo{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .imagenFondo{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-image: url('src\img\fondo8.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    filter: blur(5px); 
+    z-index: -1;
+    background-attachment: fixed;
   }

@@ -5,9 +5,7 @@
   font-size: 20px;
 }
 
-body{
-  background-color: #fff59d;
-}
+
 
 /* header */
 .header {
@@ -74,23 +72,11 @@ body{
     text-align: center;
     margin-top: 0px;
     padding: 150px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
   }
-
-.imagenFondo{
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%; 
-  height: 100%; 
-  background-image: url('src\img\fondo8.jpg'); 
-  background-size: cover; 
-  background-position: center; 
-  filter: blur(5px); 
-  z-index: -1;
-  background-attachment: fixed;
-}
-
-
 .contenido h1{
   text-align: center;
   font-size: 100px;
@@ -108,9 +94,24 @@ body{
   color: white;
 }
 
+.imagenFondo{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-image: url('src\img\fondo8.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  filter: blur(5px); 
+  z-index: -1;
+  background-attachment: fixed;
+}
+
 /* botones */
 .contenedor{
-  min-height: 45vh;
+  /* min-height: 45vh; */
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,6 +121,7 @@ body{
   display: flex;
   flex-direction: row;
 }
+
 
 .btn{
   text-decoration: none;
