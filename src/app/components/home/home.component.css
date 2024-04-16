@@ -7,9 +7,9 @@
 
 body{
   background-color: #fff59d;
-
 }
 
+/* header */
 .header {
     background-color: #1b3039;
     display: flex;
@@ -68,17 +68,36 @@ body{
   color: #ffbc0e ;
   text-transform: uppercase;
 }
-  
+
+/* contenido/body */
 .contenido {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 0px;
+    padding: 150px;
+    /* background-image: url('src\img\fondo8.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background; */
   }
+
+.imagenFondo{
+  position: absolute; /* Establece una posición absoluta para la imagen de fondo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa todo el alto del contenedor */
+  background-image: url('src\img\fondo8.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el elemento */
+  background-position: center; /* Centra la imagen de fondo */
+  filter: blur(5px); /* Aplica un desenfoque a la imagen */
+  z-index: -1;
+  background-attachment: fixed;
+}
+
 
 .contenido h1{
   text-align: center;
   font-size: 100px;
-  margin-top: 150px;
-  margin-bottom: 150px;
 }
 
 .contenido p{
@@ -89,6 +108,7 @@ body{
   margin-bottom: 70px;
 }
 
+/* botones */
 .contenedor{
   min-height: 45vh;
   display: flex;
@@ -108,6 +128,8 @@ body{
   position: relative;
   margin: 32px;
 }
+
+/* boton 1 "crear torneo" */
 
 .btn-1{
   background:#1b3039;
@@ -142,7 +164,7 @@ body{
   transform: translate(12px, 12px);
 }
 
-
+/* boton 2 "ver torneos" */
 .btn-2{
   background:#1b3039;
   color:#ffbc0e;
@@ -175,26 +197,3 @@ body{
 .btn-2:hover::before{
   transform: translate(12px, 12px);
 }
-/* .buttons {
-  margin-top: 200px;
-}
-  
-.create-button, .view-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-  
-  .create-button {
-    background-color: #3498db;
-    color: white;
-    margin-right: 20px;
-  }
-  
-  .view-button {
-    background-color: #2ecc71;
-    color: white;
-  } */
-  
