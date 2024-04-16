@@ -77,15 +77,21 @@ body{
 .contenido h1{
   text-align: center;
   font-size: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 .contenido p{
-  text-align: left;
+  text-align: justify;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
   
-  .buttons {
-    margin-top: 30px;
-  }
+.buttons {
+  margin-top: 200px;
+}
   
   .create-button, .view-button {
     padding: 10px 20px;
