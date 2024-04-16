@@ -74,22 +74,18 @@ body{
     text-align: center;
     margin-top: 0px;
     padding: 150px;
-    /* background-image: url('src\img\fondo8.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background; */
   }
 
 .imagenFondo{
-  position: absolute; /* Establece una posición absoluta para la imagen de fondo */
+  position: absolute; 
   top: 0;
   left: 0;
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  height: 100%; /* Ocupa todo el alto del contenedor */
-  background-image: url('src\img\fondo8.jpg'); /* Ruta de la imagen de fondo */
-  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el elemento */
-  background-position: center; /* Centra la imagen de fondo */
-  filter: blur(5px); /* Aplica un desenfoque a la imagen */
+  width: 100%; 
+  height: 100%; 
+  background-image: url('src\img\fondo8.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  filter: blur(5px); 
   z-index: -1;
   background-attachment: fixed;
 }
@@ -98,6 +94,8 @@ body{
 .contenido h1{
   text-align: center;
   font-size: 100px;
+  color: #ffbc0e;
+  font-style: italic;
 }
 
 .contenido p{
@@ -106,6 +104,8 @@ body{
   margin-right: 200px;
   margin-top: 70px;
   margin-bottom: 70px;
+  padding-top: 100px;
+  color: white;
 }
 
 /* botones */
