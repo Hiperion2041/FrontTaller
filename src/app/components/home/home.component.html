@@ -1,22 +1,24 @@
 <div class="header">
-    <div class="user-profile">
-      <img src="ruta-a-la-imagen-de-perfil" alt="Foto de perfil">
-      <span>{{ nombreUsuario }}</span>
+    <div class="perfil">
+      <img src="https://www.psg.fr/media/236199/messi-argentine-2.jpg?center=0.098684210526315791,0.42731277533039647&mode=crop&width=2000&height=1125&quality=80" alt="Foto de perfil">
     </div>
-    <div class="page-name">Nombre de la Página</div>
     <nav class="navigation">
-      <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/torneos">Torneos</a></li>
-        <li><a routerLink="/crear">Crear</a></li>
-        <li><a routerLink="/sobre-nosotros">Sobre Nosotros</a></li>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Torneos</a></li>
+        <li><a href="#">Crear</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
       </ul>
     </nav>
+    <div class="nombre-pagina">Fixturito</div>
   </div>
   
-  <div class="content">
-    <h1>Nombre de la Página</h1>
-    <p>Descripción de la página y para qué sirve.</p>
+  <div class="contenido">
+    <h1>FIXTURITO</h1>
+    <p>Fixturito es una página web dedicada a la creación y visualización de torneos de fútol. Aquí podrás ver 
+      los torneos que se están realizando, así como sus fixtures correspondientes, resultados de los partidos y
+      las puntuaciones de los disintos equipos. También por supuesto, podrás crear y gestionar tus propios torneos.
+    </p>
     <div class="buttons">
       <button routerLink="/crear" class="create-button">Crear Nuevo Torneo</button>
       <button routerLink="/torneos" class="view-button">Ver Todos los Torneos</button>
