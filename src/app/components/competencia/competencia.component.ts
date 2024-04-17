@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-competencia',
+  template: `
+    <button class="plus-button" (click)="redirectToAltaCompetencia()">
+      <i class="fas fa-plus"></i> +
+    </button>
+  `,
   templateUrl: './competencia.component.html',
   styleUrls: ['./competencia.component.css']
 })
@@ -11,7 +17,7 @@ export class CompetenciaComponent {
   fixture: any;
 
   constructor(
-    private rest:RestService
+    private rest:RestService, private router: Router
   ){}
 
   ngOnInit(){
@@ -54,5 +60,10 @@ export class CompetenciaComponent {
       console.log(data)
     })
     }
+
+  redirectToAltaCompetencia(): void {
+    // Navega a la ruta '/otro-componente' al hacer clic en el botón
+    this.router.navigateByUrl('/alta-competencia');
+  }
 
 }
