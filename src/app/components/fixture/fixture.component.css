@@ -71,8 +71,20 @@
 
   /* body */
 
+  .contenido{
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
   .container {
     text-align: center; 
+    justify-content: center;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    padding: 20px; /* Espaciado interno */
     }
 
   .imagenFondo{
@@ -100,6 +112,35 @@
 h1 {
     font-size: 36px;
     font-weight: bold;
-    color: #333;
+    color: #ffbc0e;
     text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  margin-left: 470px;
+}
+
+.grid-item {
+  background-color: #222020;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilos para el contenido dentro de cada grid-item */
+.grid-item h2 {
+  color: #fffdfd;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.grid-item p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
 }
