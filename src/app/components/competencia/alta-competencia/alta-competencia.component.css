@@ -65,9 +65,11 @@
     text-transform: uppercase;
   }
 /* body */
-  .body{
+  /* .body{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
   }
 
   .titulo{
@@ -92,3 +94,105 @@
     z-index: -1;
     background-attachment: fixed;
   }
+
+  .formulario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .form-group{
+    width: 80px; 
+    height: 100px;
+    position: relative;
+  }
+
+  .form.label{
+    position: relative;
+  } */
+
+  .body {
+    display: flex;
+    /* height: 100vh; */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    
+    
+  }
+
+  .titulo{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    color: #ffbc0e;
+    font-size: 45px;
+    font-weight: 600;
+  }
+  
+  .imagenFondo{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-image: url('src\img\fondo8.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    filter: blur(5px); 
+    z-index: -1;
+    background-attachment: fixed;
+  }
+
+  
+  .contenido {
+    /* flex: 1;  */
+    align-items: center;
+    justify-content: center; 
+    
+  }
+  
+  .formulario {
+    width: 300px; /* Ancho del formulario */
+    padding: 20px;
+    background-color: #1b3039; /* Color de fondo del formulario */
+    border-radius: 5px;
+    margin-top: 55px;
+    margin-left: 80px;
+  }
+  
+  /* Estilos adicionales para los elementos del formulario */
+  .form-label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #ffbc0e;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 35px;
+    border: 1px solid #cc9200;
+    border-radius: 3px;
+    background-color:rgb(94, 144, 165) ;
+    color: white;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffbc0e;
+    color: #1b3039;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 550;
+  }
+  
+  .btn:hover {
+    background-color: #cc9200;
+  }
+  
