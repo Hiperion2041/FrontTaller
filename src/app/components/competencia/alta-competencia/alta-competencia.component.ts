@@ -75,7 +75,10 @@ export class AltaCompetenciaComponent {
     })
   }
 
-
+  desloguear(){
+   
+    this.router.navigate(['/login']);
+  }
   
 
   formatoFechaISO(fecha: string): string {

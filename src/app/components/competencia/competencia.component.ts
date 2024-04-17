@@ -56,6 +56,11 @@ export class CompetenciaComponent {
     this.rest.logout();
     console.log("deslogueado");
   }
+  desloguear1(){
+   
+    this.router.navigate(['/login']);
+  }
+  
 
   fixturee(){
     this.rest.getPart().subscribe((data:any)=>{

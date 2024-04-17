@@ -133,4 +133,8 @@ this.filtrarcompe()
       duration: 1500
     });
   }
+  desloguear(){
+    
+    this.router.navigate(['/login']);
+  }
 }
