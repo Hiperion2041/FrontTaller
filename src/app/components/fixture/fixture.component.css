@@ -9,8 +9,6 @@
     background-color: #fff59d;
   }
 
-<<<<<<< Updated upstream
-=======
   .mosaic-container {
     display: flex;
     flex-wrap: wrap;
@@ -18,8 +16,6 @@
     margin-top: 50px;
     margin-left: 75px;
 }
->>>>>>> Stashed changes
-
   
   /* header */
   .header {
