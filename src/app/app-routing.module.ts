@@ -5,12 +5,14 @@ import { LoginComponent } from './components/login/login.component';
 import { AltaCompetenciaComponent } from './components/competencia/alta-competencia/alta-competencia.component';
 import { AuthGuard } from './components/auth.guard';
 import { HomeComponent } from './components/home/home.component';
+import { FixtureComponent } from './components/fixture/fixture.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:"competencia", component:CompetenciaComponent},
+  {path:"competencia", component:CompetenciaComponent, canActivate: [AuthGuard]},
   {path:"alta-competencia",component:AltaCompetenciaComponent, canActivate: [AuthGuard]},
+  {path:"fixture", component:FixtureComponent},
   {path:"", redirectTo:"home", pathMatch:"full"},
   {path:"**", redirectTo:"home",pathMatch:"full"},
   

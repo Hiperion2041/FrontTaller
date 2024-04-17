@@ -153,6 +153,7 @@ export class LoginComponent implements OnInit {
 
         desloguear(){
           localStorage.removeItem('token');
+          localStorage.removeItem('mail')
           console.log("deslogueado")
           console.log(localStorage.getItem('token'))
         }

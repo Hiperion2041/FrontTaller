@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
-import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
+import { RestService } from 'src/app/services/rest.service';
+
 
 @Component({
   selector: 'app-competencia',
+  template: `
+    <button class="plus-button" (click)="redirectToAltaCompetencia()">
+      <i class="fas fa-plus"></i> +
+    </button>
+  `,
   templateUrl: './competencia.component.html',
   styleUrls: ['./competencia.component.css']
 })
