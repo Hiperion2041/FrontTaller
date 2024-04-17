@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-competencia',
@@ -11,7 +12,8 @@ export class CompetenciaComponent {
   fixture: any;
 
   constructor(
-    private rest:RestService
+    private rest:RestService,
+    private router: Router
   ){}
 
   ngOnInit(){
@@ -54,5 +56,10 @@ export class CompetenciaComponent {
       console.log(data)
     })
     }
+
+    redirigirAComponente() {
+      this.router.navigate(['/alta-competencia']);
+    }
+    
 
 }
