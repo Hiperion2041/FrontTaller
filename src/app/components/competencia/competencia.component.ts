@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
 import { Competencia } from '../DtosInterface/competenciaDTO';
+import { CompetenciaService } from 'src/app/services/competencia.service';
 
 
 @Component({
@@ -15,18 +16,20 @@ import { Competencia } from '../DtosInterface/competenciaDTO';
   styleUrls: ['./competencia.component.css']
 })
 export class CompetenciaComponent {
-  token:any;
+  token:any
   fixture: any;
   competencias: Competencia[] = [];
 
   constructor(
     private rest:RestService,
-    private router: Router
+    private router: Router,
+    private comp:CompetenciaService
   ){}
 
   ngOnInit(){
     this.token=localStorage.getItem('token')
     this.obtenercompetencias()
+    this.obtenerpartido()
 
   }
 
@@ -59,9 +62,10 @@ export class CompetenciaComponent {
     obtenercompetencias(){
       this.rest.getComp().subscribe((data: any) => {
         this.competencias=data;
+        console.log(this.competencias)
       this.competencias.forEach((item: any) => {
-        console.log(item);
-        console.log(item.usuario.nombre)
+        // console.log(item);
+        // console.log(item.usuario.nombre)
         // console.log(item.nombre);
         // console.log(item.usuario.id);
         // console.log(localStorage.getItem('token'))
@@ -71,9 +75,12 @@ export class CompetenciaComponent {
 }
 
 obtenerpartido(){
-  this.rest.getPart().subscribe((data:any)=>{
+  this.comp.getPart().subscribe((data:any)=>{
     console.log(data)
+    console.log('si')
   })
 }
+
+
 
 }
