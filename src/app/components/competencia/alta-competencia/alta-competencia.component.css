@@ -64,61 +64,13 @@
     color: #ffbc0e ;
     text-transform: uppercase;
   }
+
 /* body */
-  /* .body{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .titulo{
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 100px;
-    padding: 0;
-    color: #ffbc0e;
-    font-size: 35px;
-  }
-
-  .imagenFondo{
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    background-image: url('src\img\fondo8.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    filter: blur(5px); 
-    z-index: -1;
-    background-attachment: fixed;
-  }
-
-  .formulario{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 60px;
-    position: relative;
-  }
-
-  .form-group{
-    width: 80px; 
-    height: 100px;
-    position: relative;
-  }
-
-  .form.label{
-    position: relative;
-  } */
 
   .body {
     display: flex;
-    /* height: 100vh; */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; 
+    align-items: center; 
     
     
   }
@@ -149,19 +101,19 @@
 
   
   .contenido {
-    /* flex: 1;  */
     align-items: center;
     justify-content: center; 
     
   }
   
   .formulario {
-    width: 300px; /* Ancho del formulario */
+    width: 300px; 
     padding: 20px;
-    background-color: #1b3039; /* Color de fondo del formulario */
+    background-color: #1b3039; 
     border-radius: 5px;
     margin-top: 55px;
     margin-left: 80px;
+    box-shadow: 7px 13px 37px #000;
   }
   
   /* Estilos adicionales para los elementos del formulario */
