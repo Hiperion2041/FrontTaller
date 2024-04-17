@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
+import { Competencia } from '../DtosInterface/competenciaDTO';
 
 
 @Component({
@@ -16,6 +17,7 @@ import { RestService } from 'src/app/services/rest.service';
 export class CompetenciaComponent {
   token:any;
   fixture: any;
+  competencias: Competencia[] = [];
 
   constructor(
     private rest:RestService,
@@ -24,21 +26,8 @@ export class CompetenciaComponent {
 
   ngOnInit(){
     this.token=localStorage.getItem('token')
-    this.rest.getComp().subscribe((data: any) => {
-      data.forEach((item: any) => {
-        console.log(item);
-        console.log(item.nombre);
-        console.log(item.usuario.id);
-        console.log(localStorage.getItem('token'))
-    });
-  }
-  )
+    this.obtenercompetencias()
 
-  this.rest.getPart().subscribe((data:any)=>{
-    console.log(data)
-  })
-  console.log('=================');
-  this.iduser()
   }
 
   iduser(){
@@ -67,5 +56,24 @@ export class CompetenciaComponent {
       this.router.navigate(['/alta-competencia']);
     }
     
+    obtenercompetencias(){
+      this.rest.getComp().subscribe((data: any) => {
+        this.competencias=data;
+      this.competencias.forEach((item: any) => {
+        console.log(item);
+        console.log(item.usuario.nombre)
+        // console.log(item.nombre);
+        // console.log(item.usuario.id);
+        // console.log(localStorage.getItem('token'))
+    });
+  }
+  )
+}
+
+obtenerpartido(){
+  this.rest.getPart().subscribe((data:any)=>{
+    console.log(data)
+  })
+}
 
 }

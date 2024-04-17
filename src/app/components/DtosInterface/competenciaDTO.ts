@@ -1,3 +1,5 @@
+import { Usuario } from "./usuarioDTO";
+
 export class competenciaDTO {
   
     id:number=1;
@@ -25,8 +27,19 @@ export class competenciaDTO {
       }
     }
 
-    export interface Usuario {
-        id: number;
+    export interface usuario2 {
+      id: number;
+      nombre:string;
+    }
+
+      export interface Competencia {
+        nombre: string;
+        id:number;
+        estado:number;
+        fecha_baja:null | undefined;
+    fecha_inicio:string;
+    fecha_creacion: string;
+    usuario?: usuario2 | undefined;
       }
 
   

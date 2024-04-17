@@ -4,3 +4,7 @@ export class UsuarioDTO {
     contrasenia: string="";
     mail: string="";
   }
+
+  export interface Usuario {
+    id: number;
+  }
