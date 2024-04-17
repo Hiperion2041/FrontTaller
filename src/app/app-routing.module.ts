@@ -10,7 +10,7 @@ import { FixtureComponent } from './components/fixture/fixture.component';
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:"competencia", component:CompetenciaComponent, canActivate: [AuthGuard]},
+  {path:"competencia", component:CompetenciaComponent},
   {path:"alta-competencia",component:AltaCompetenciaComponent, canActivate: [AuthGuard]},
   {path:"fixture", component:FixtureComponent},
   {path:"", redirectTo:"home", pathMatch:"full"},
