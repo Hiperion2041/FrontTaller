@@ -43,7 +43,7 @@ this.filtrarcompe()
   
       if (filteredPartidos.length === 0) {
         this.mostrarSnackbar("Esta competencia no tiene partidos asignados")
-        this.partido = data;
+        // this.partido = data;
       } else {
         this.partido = filteredPartidos;
       }
