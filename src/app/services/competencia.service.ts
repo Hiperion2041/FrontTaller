@@ -23,6 +23,12 @@ export class CompetenciaService {
       headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})});
   }
 
+  deletecomp(id:number): Observable<any> {
+    return this.http.delete(`http://localhost:8080/api/v1/competencia/${id}`, {
+      headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})
+    });
+}
+
   getPart(){
     return this.http.get("http://localhost:8080/api/v1/partidos",{
       headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})

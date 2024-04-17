@@ -22,7 +22,7 @@ export class FixtureComponent {
     private router:Router,
     private rest:RestService
   ){
-    this.compeid='';
+    
   }
 
   ngOnInit(){
@@ -48,6 +48,23 @@ this.filtrarcompe()
         this.partido = filteredPartidos;
       }
     });
+  }
+
+  borrarcomp() {
+    if (this.compeid) {
+      this.comp.deletecomp(parseInt(this.compeid)).subscribe(
+        () => {
+          console.log('Competencia eliminada con éxito');
+          this.router.navigate(['/competencia'])
+        },
+        error => {
+          console.error('Error al eliminar la competencia:', error);
+          console.log(this.compeid)
+        }
+      );
+    } else {
+      console.error('ID de competencia no definido');
+    }
   }
 
   filtrarcompe(){
