@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
 import { Competencia } from '../DtosInterface/competenciaDTO';
 import { CompetenciaService } from 'src/app/services/competencia.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class CompetenciaComponent {
   constructor(
     private rest:RestService,
     private router: Router,
-    private comp:CompetenciaService
+    private comp:CompetenciaService,
+    private _snackBar:MatSnackBar
   ){}
 
   ngOnInit(){
@@ -87,6 +89,11 @@ obtenerpartido(){
   })
 }
 
+mostrarSnackbar(mensaje: string) {
+  this._snackBar.open(mensaje, '', {
+    duration: 1500
+  });
+}
 
 
 }

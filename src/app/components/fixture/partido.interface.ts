@@ -1,22 +1,24 @@
-export class Partido {
-    id:number | undefined;
-    id_local:number | undefined;
-    id_visitante:number | undefined;
-    id_competencia:number | undefined;
+import { competenciaDTO } from "../DtosInterface/competenciaDTO";
+import { Usuario } from "../DtosInterface/usuarioDTO";
+
+export class PartidoDto {
+    id_competencia:Competencia | undefined;
+    fecha_baja:null | undefined;
+    fecha_realizacion:string="";
     goles_local:number | undefined;
     goles_visitante:number | undefined;
-    fecha_realizacion:Date | undefined;
-    competencia:Competencia[] | undefined;
-    participante:Participante[] | undefined;
+    id:number | undefined;
+    id_local:Participante | undefined;
+    id_visitante:Participante | undefined;
     
     constructor() {}
-  }1
+  }
 
 export interface Partidos{
     id:number;
     local:Participante;
     visitante:Participante;
-    id_competencia:number;
+    id_competencia:Competencia["id"];
     goles_local:number;
     goles_visitante:number;
     fecha_realizacion:Date;
@@ -30,14 +32,16 @@ export interface Participante{
     nombre:string;
     colores:string;
     trofeos:string;
+    fecha_bajata:Date;
 
 }
 
 export interface Competencia {
     nombre: string;
-    id:number;
+    id:string;
     estado:number;
     fecha_baja:null | undefined;
 fecha_inicio:string;
 fecha_creacion: string;
+usuario?: Usuario | undefined;
   }

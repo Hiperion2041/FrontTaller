@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Competencia, competenciaDTO } from '../components/DtosInterface/competenciaDTO';
 import { Observable } from 'rxjs';
+import { PartidoDto, Partidos } from '../components/fixture/partido.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +27,14 @@ export class CompetenciaService {
     return this.http.get("http://localhost:8080/api/v1/partidos",{
       headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
     } 
+
+    getParticipantes(){
+      return this.http.get("http://localhost:8080/api/v1/participantes",{
+      headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
+    }
+
+    guardarPartido(partidoDto: PartidoDto): Observable<any> {
+      return this.http.post("http://localhost:8080/api/v1/partido/save", partidoDto,{
+        headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
+    }
 }
