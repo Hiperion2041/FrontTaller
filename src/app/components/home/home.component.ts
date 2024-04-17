@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('mail')
     console.log("deslogueado")
     console.log(localStorage.getItem('token'))
+    this.router.navigate(['/login']);
   }
 
 }
