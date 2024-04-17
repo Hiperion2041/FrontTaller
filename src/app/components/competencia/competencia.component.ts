@@ -44,6 +44,12 @@ export class CompetenciaComponent {
     })
   }
 
+  irfixture(competenciaId: number){
+    localStorage.setItem('competenciaId', competenciaId.toString());
+    console.log(localStorage.getItem('competenciaId'))
+    this.router.navigate(['/fixture'])
+  }
+
   desloguear(){
     this.rest.logout();
     console.log("deslogueado");

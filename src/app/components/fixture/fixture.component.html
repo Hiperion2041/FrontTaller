@@ -25,9 +25,10 @@
             <h1>Fecha 1</h1>
           </div>
 
+          <div class="mosaic-container">
           <div *ngFor="let partidos of partido">
             <div class="mosaic-item">
-              <h2>{{ partidos.id }}</h2>
+              <h2>Partido :{{ partidos.id }}</h2>
               <p>Id Local: {{ partidos.local.nombre }}</p>
               <p>Id Visita: {{ partidos.visitante.nombre}}</p>
               <p>Goles Local: {{ partidos.goles_local }}</p>
@@ -36,6 +37,7 @@
               <p>Competencia: {{ partidos.competencia.nombre }}</p>
             </div>
           </div>
+        </div>
 
           <div>
             <h1>Fecha 2</h1>
