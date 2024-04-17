@@ -4,6 +4,8 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { CompetenciaService } from 'src/app/services/competencia.service';
 import { RestService } from 'src/app/services/rest.service';
 import { competenciaDTO } from '../../DtosInterface/competenciaDTO';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alta-competencia',
@@ -19,7 +21,9 @@ export class AltaCompetenciaComponent {
 
   constructor(
     private comp:CompetenciaService,
-    private rest:RestService
+    private rest:RestService,
+    private _snackBar: MatSnackBar,
+    private router:Router
   ){}
 
   ngOnInit():void{
@@ -42,6 +46,8 @@ export class AltaCompetenciaComponent {
     this.comp.crearComp(competencia).subscribe(
       response => {
         console.log('Competencia guardada correctamente:', response);
+        this.router.navigate(['/home']);
+        this.mostrarSnackbar("Competencia Creada Correctamente");
         // Aquí puedes hacer algo después de guardar la competencia, como redirigir a otra página
       },
       error => {
@@ -76,6 +82,13 @@ export class AltaCompetenciaComponent {
     const date = new Date(fecha);
     const isoString = date.toISOString();
     return isoString;
+  }
+
+
+  mostrarSnackbar(mensaje: string) {
+    this._snackBar.open(mensaje, '', {
+      duration: 1500
+    });
   }
 
 

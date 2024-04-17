@@ -105,7 +105,7 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('token', data.access_token);
                 localStorage.setItem('mail',this.usuario);
             console.log('Ingreso correcto');
-            this.router.navigate(['/competencia']);
+            this.router.navigate(['/home']);
           }, (error : any) => {
             this.mostrarSnackbar('Usuario o contraseña incorrectos');
           });

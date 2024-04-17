@@ -13,8 +13,7 @@ export class CompetenciaService {
    }
 
    crearComp(compDto: competenciaDTO): Observable<any> {
-    const token = localStorage.getItem('token');
-  const headers = new HttpHeaders({'Authorization': 'Bearer ' + token});
-  return this.http.post("http://localhost:8080/api/v1/competencia/save", compDto, { headers });
+    return this.http.post("http://localhost:8080/api/v1/competencia/save", compDto,{
+      headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})});
   }
 }
