@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { competenciaDTO } from '../components/DtosInterface/competenciaDTO';
+import { Competencia, competenciaDTO } from '../components/DtosInterface/competenciaDTO';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,4 +16,14 @@ export class CompetenciaService {
     return this.http.post("http://localhost:8080/api/v1/competencia/save", compDto,{
       headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})});
   }
+
+  actComp(competencia: Competencia): Observable<any> {
+    return this.http.put("'http://localhost:8080/api/v1/competencia/update/${competencia.id'",competencia,{
+      headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})});
+  }
+
+  getPart(){
+    return this.http.get("http://localhost:8080/api/v1/partidos",{
+      headers: new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')})})
+    } 
 }
