@@ -12,6 +12,7 @@ import { AltaCompetenciaComponent } from './components/competencia/alta-competen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { FixtureComponent } from './components/fixture/fixture.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FixtureComponent } from './components/fixture/fixture.component';
     CompetenciaComponent,
     AltaCompetenciaComponent,
     HomeComponent,
-    FixtureComponent
+    FixtureComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

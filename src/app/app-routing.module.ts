@@ -6,10 +6,12 @@ import { AltaCompetenciaComponent } from './components/competencia/alta-competen
 import { AuthGuard } from './components/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { FixtureComponent } from './components/fixture/fixture.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:'login',component:LoginComponent},
+  {path:'about-us', component:AboutUsComponent},
   {path:"competencia", component:CompetenciaComponent, canActivate: [AuthGuard]},
   {path:"alta-competencia",component:AltaCompetenciaComponent, canActivate: [AuthGuard]},
   {path:"fixture", component:FixtureComponent, canActivate: [AuthGuard]},

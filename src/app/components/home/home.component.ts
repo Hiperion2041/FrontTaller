@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
   redirigirATorneo() {
     this.router.navigate(['/competencia']);
   }
+
+  // irAaboutUs(){
+  //   this.router.navigate(['/about-us']);
+  // }
   
   redirigirACrear() {
     this.router.navigate(['/alta-competencia']);

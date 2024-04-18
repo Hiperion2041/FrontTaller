@@ -57,7 +57,6 @@ export class CompetenciaComponent {
     console.log("deslogueado");
   }
   desloguear1(){
-   
     this.router.navigate(['/login']);
   }
   
